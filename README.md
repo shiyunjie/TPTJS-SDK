@@ -25,11 +25,14 @@
 require(['TPTJS-SDK'], function (TPTJS) { // ...
 TPTJS.khtAppRouteRequest('', '1', '', '', '');
 ```
-### 可以直接通过 script 引⼊入
-<script src="https://ecustomer.tp95589.com/static/SDK/jsSdk.min.js"></script> 
+### 可以直接通过 script 引⼊入 (暂时没有cdn 所以不建议适用)
+```
+  <script src="**/jsSdk.min.js"><script> 
   <script>
-  // Global variabl
-  TPTJS.khtAppRouteRequest('', '1', '', '', '');
-  // Property in the window object
-  window. TPTJS.khtAppRouteRequest('', '1', '', '', ''); 
-</script>
+    // Global variabl
+    TPTJS.khtAppRouteRequest('', '1', '', '', '');
+    // Property in the window object
+    window. TPTJS.khtAppRouteRequest('', '1', '', '', ''); 
+  </script>
+```
+

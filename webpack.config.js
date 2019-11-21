@@ -2,14 +2,14 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
-    'jsSdk': './src/index.js',
-    'jsSdk.min': './src/index.js'
+    jsSdk: './src/index.js',
+    'jsSdk.min': './src/index.js',
   },
   output: {
     filename: '[name].js',
     library: 'TPTJS-SDK',
     libraryTarget: 'umd',
-    libraryExport: 'default'
+    libraryExport: 'default',
   },
   module: {
     rules: [
@@ -20,7 +20,7 @@ module.exports = {
           'eslint-loader',
         ],
       },
-    ]
+    ],
   },
   mode: 'none',
   optimization: {
@@ -28,7 +28,7 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         include: /\.min\.js$/,
-      })
-    ]
-  }
-}
+      }),
+    ],
+  },
+};

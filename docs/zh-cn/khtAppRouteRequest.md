@@ -7,7 +7,7 @@
 ## 使用指南
 
 ```js
-import * as TPTJS from 'TPTJS-SDK'
+import * as TPTJS from 'tpt-js-sdk'
 TPTJS.khtAppRouteRequest('', 1, '', '', '');
 ```
 

@@ -6,26 +6,26 @@
 ## 支持的使⽤⽅式
 ### 支持 ES module
 ```
-  npm install TPTJS-SDK
+  npm install tpt-js-sdk
 ```
 ```js
-  import * as TPTJS from 'TPTJS-SDK'; 
+  import * as TPTJS from 'tpt-js-sdk'; 
   TPTJS.khtAppRouteRequest('', 1, '', '', '');
 ```
 ### 支持 CJS
 ```
-  npm install TPTJS-SDK
+  npm install tpt-js-sdk
 ```
 ```js
-  const TPTJS = require('TPTJS-SDK'); // ...
+  const TPTJS = require('tpt-js-sdk'); // ...
   TPTJS.khtAppRouteRequest('', 1, '', '', '');
 ``` 
 ### 支持 AMD
 ```
-  npm install TPTJS-SDK
+  npm install tpt-js-sdk
 ```
 ```js
-require(['TPTJS-SDK'], function (TPTJS) { // ...
+require(['tpt-js-sdk'], function (TPTJS) { // ...
 TPTJS.khtAppRouteRequest('', 1, '', '', '');
 ```
 ### 可以直接通过 script 引⼊入 (暂时没有cdn 所以不建议适用)

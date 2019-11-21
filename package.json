@@ -1,11 +1,12 @@
 {
   "name": "tpt-js-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "太平通app js-sdk",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "publish": "webpack"
   },
   "keywords": [],
   "author": "johnbian",

@@ -101,10 +101,13 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _intentMiniProgram__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   khtAppRouteRequest: _route__WEBPACK_IMPORTED_MODULE_0__["default"],
+  intentMiniProgram: _intentMiniProgram__WEBPACK_IMPORTED_MODULE_1__["default"],
 });
 
 
@@ -166,6 +169,37 @@ const isWeixin = uaXZ.indexOf('micromessenger') !== -1;
   isiOSXZ,
   isWeixin,
 });
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return intentMiniProgram; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * 唤起小程序
+ * @param userName  小程序原始id
+ * @param path 小程序路径
+ * @param type 可选打开开发版（1），体验版（2），正式版（0）number
+ */
+function intentMiniProgram({ userName, path, type }) {
+  const obj = {
+    userName,
+    path,
+    type,
+  };
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+    // eslint-disable-next-line no-undef
+    kht.intentMiniProgram(JSON.stringify(obj));
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+    window.webkit.messageHandlers.intentMiniProgram.postMessage(obj);
+  }
+}
 
 
 /***/ })

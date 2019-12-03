@@ -27,6 +27,7 @@ TPTJS.khtAppRouteRequest('', 1, '', '', '');
 | ---   | ---- |
 | LogIn  | 登录页面 |
 | RealNameAuthentication  | 实名认证 |
+| khtBack  | 退出webview |
 
 ## pageType 为 'RN' tagUrl 可选值
 

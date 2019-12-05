@@ -4,4 +4,5 @@
  - [路由跳转](zh-cn/khtAppRouteRequest)
  - [唤起微信小程序](zh-cn/intentMiniProgram)
  - [获取用户信息](zh-cn/khtRequestAppCurrentUser)
+ - [保存数据](zh-cn/khtSaveString)
 

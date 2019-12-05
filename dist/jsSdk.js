@@ -103,6 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _intentMiniProgram__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _khtRequestAppCurrentUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _khtSaveString__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+
 
 
 
@@ -111,6 +113,7 @@ __webpack_require__.r(__webpack_exports__);
   khtAppRouteRequest: _route__WEBPACK_IMPORTED_MODULE_0__["default"],
   intentMiniProgram: _intentMiniProgram__WEBPACK_IMPORTED_MODULE_1__["default"],
   khtRequestAppCurrentUser: _khtRequestAppCurrentUser__WEBPACK_IMPORTED_MODULE_2__["default"],
+  khtSaveString: _khtSaveString__WEBPACK_IMPORTED_MODULE_3__["default"],
 });
 
 
@@ -224,6 +227,33 @@ function khtRequestAppCurrentUser() {
     kht.khtRequestAppCurrentUser();
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
     window.webkit.messageHandlers.khtRequestAppCurrentUser.postMessage({});
+  }
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return khtSaveString; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * 原生存值
+ * @author john.bian
+ * @param key 健值 'khtwebview_' 开头的字符串
+ * @param value 要保持的值
+ * @since 1.1.9
+ */
+function khtSaveString(key, value) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+    // eslint-disable-next-line no-undef
+    kht.khtSaveString(key, value);
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+    window.webkit.messageHandlers.khtSaveString.postMessage({ key, value });
   }
 }
 

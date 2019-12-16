@@ -3,6 +3,7 @@ import intentMiniProgram from './intentMiniProgram';
 import khtRequestAppCurrentUser from './khtRequestAppCurrentUser';
 import khtSaveString from './khtSaveString';
 import khtRequestAppInfo from './khtRequestAppInfo';
+import tpAppShare from './tpAppShare';
 
 export default {
   khtAppRouteRequest,
@@ -10,4 +11,5 @@ export default {
   khtRequestAppCurrentUser,
   khtSaveString,
   khtRequestAppInfo,
+  tpAppShare,
 };

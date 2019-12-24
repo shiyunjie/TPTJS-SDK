@@ -4,6 +4,7 @@ import khtRequestAppCurrentUser from './khtRequestAppCurrentUser';
 import khtSaveString from './khtSaveString';
 import khtRequestAppInfo from './khtRequestAppInfo';
 import tpAppShare from './tpAppShare';
+import tpH5Share from './tpH5Share';
 
 export default {
   khtAppRouteRequest,
@@ -12,4 +13,5 @@ export default {
   khtSaveString,
   khtRequestAppInfo,
   tpAppShare,
+  tpH5Share,
 };

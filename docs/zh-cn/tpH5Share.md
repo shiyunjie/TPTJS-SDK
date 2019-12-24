@@ -1,8 +1,8 @@
-# tpAppShare
+# tpH5Share
 
 ---
 
-网页 调用微信分享 用于导航栏
+网页 调用微信分享
 
 ## 使用指南
 
@@ -14,7 +14,7 @@ const shareInfo = {
   url: '',
   content: ''
 }
-TPTJS.tpAppShare(shareInfo);
+TPTJS.tpH5Share(shareInfo);
 ```
 
 ## khtSaveString 参数

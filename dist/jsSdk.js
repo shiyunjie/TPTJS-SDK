@@ -107,6 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _khtRequestAppInfo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _tpAppShare__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
 /* harmony import */ var _tpH5Share__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
+
 
 
 
@@ -123,6 +125,7 @@ __webpack_require__.r(__webpack_exports__);
   khtRequestAppInfo: _khtRequestAppInfo__WEBPACK_IMPORTED_MODULE_4__["default"],
   tpAppShare: _tpAppShare__WEBPACK_IMPORTED_MODULE_5__["default"],
   tpH5Share: _tpH5Share__WEBPACK_IMPORTED_MODULE_6__["default"],
+  khtExcuteJSCallback: _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__["default"],
 });
 
 
@@ -344,6 +347,34 @@ function tpH5Share(shareInfo) {
     );
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
     window.webkit.messageHandlers.Share.postMessage(shareInfo);
+  }
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return khtExcuteJSCallback; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * @author johnbian
+ * @param excuteTime 调用时机
+ * @param callBack 回调方法
+ * @description 告诉app何时执行js回调
+ * @since 1.20.0
+ */
+function khtExcuteJSCallback(excuteTime, callBack) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtExcuteJSCallback) {
+    // eslint-disable-next-line no-undef
+    kht.khtExcuteJSCallback(excuteTime, callBack);
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.khtExcuteJSCallback) {
+    window.webkit.messageHandlers.khtExcuteJSCallback.postMessage({ excuteTime, callBack });
   }
 }
 

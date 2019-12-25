@@ -8,3 +8,4 @@
  - [保存数据](zh-cn/khtSaveString)
  - [微信分享（导航栏）](zh-cn/tpAppShare)
  - [微信分享](zh-cn/tpH5Share)
+ - [特定时机执行js回调](zh-cn/khtExcuteJSCallback)

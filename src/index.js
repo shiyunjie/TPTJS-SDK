@@ -5,6 +5,7 @@ import khtSaveString from './khtSaveString';
 import khtRequestAppInfo from './khtRequestAppInfo';
 import tpAppShare from './tpAppShare';
 import tpH5Share from './tpH5Share';
+import khtExcuteJSCallback from './khtExcuteJSCallback';
 
 export default {
   khtAppRouteRequest,
@@ -14,4 +15,5 @@ export default {
   khtRequestAppInfo,
   tpAppShare,
   tpH5Share,
+  khtExcuteJSCallback,
 };

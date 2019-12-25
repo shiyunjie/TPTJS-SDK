@@ -1,6 +1,6 @@
 {
   "name": "tpt-js-sdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "太平通app js-sdk",
   "main": "index.js",
   "scripts": {

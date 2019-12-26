@@ -234,10 +234,11 @@ __webpack_require__.r(__webpack_exports__);
  * 获取用户信息
  */
 function khtRequestAppCurrentUser() {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtRequestAppCurrentUser) {
     // eslint-disable-next-line no-undef
     kht.khtRequestAppCurrentUser();
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.khtRequestAppCurrentUser) {
     window.webkit.messageHandlers.khtRequestAppCurrentUser.postMessage({});
   }
 }
@@ -310,11 +311,12 @@ __webpack_require__.r(__webpack_exports__);
  * @since 1.1.8
  */
 function tpAppShare(shareInfo) {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tpAppShare) {
     // eslint-disable-next-line no-undef
     kht.tpAppShare(shareInfo.imgUrl,
       shareInfo.title, shareInfo.content, shareInfo.url);
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.tpAppShare) {
     window.webkit.messageHandlers.tpAppShare.postMessage(shareInfo);
   }
 }

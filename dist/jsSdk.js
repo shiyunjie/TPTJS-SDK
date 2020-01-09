@@ -108,6 +108,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tpAppShare__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
 /* harmony import */ var _tpH5Share__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
 /* harmony import */ var _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
+/* harmony import */ var _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+
 
 
 
@@ -126,6 +128,7 @@ __webpack_require__.r(__webpack_exports__);
   tpAppShare: _tpAppShare__WEBPACK_IMPORTED_MODULE_5__["default"],
   tpH5Share: _tpH5Share__WEBPACK_IMPORTED_MODULE_6__["default"],
   khtExcuteJSCallback: _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__["default"],
+  tptRequestCachedValueForKey: _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__["default"],
 });
 
 
@@ -377,6 +380,31 @@ function khtExcuteJSCallback(excuteTime, callBack) {
     kht.khtExcuteJSCallback(excuteTime, callBack);
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.khtExcuteJSCallback) {
     window.webkit.messageHandlers.khtExcuteJSCallback.postMessage({ excuteTime, callBack });
+  }
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tptRequestCachedValueForKey; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * 获取缓存中的数据接收1个参数
+ * @param key
+ */
+function tptRequestCachedValueForKey(key) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tptRequestCachedValueForKey) {
+    // eslint-disable-next-line no-undef
+    kht.tptRequestCachedValueForKey(key);
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
+    window.webkit.messageHandlers.tptRequestCachedValueForKey.postMessage({ key });
   }
 }
 

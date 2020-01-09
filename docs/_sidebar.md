@@ -6,6 +6,7 @@
  - [获取用户信息](zh-cn/khtRequestAppCurrentUser)
  - [获取APP信息](zh-cn/khtRequestAppInfo)
  - [保存数据](zh-cn/khtSaveString)
+ - [获取原生保存数据](zh-cn/tptRequestCachedValueForKey)
  - [微信分享（导航栏）](zh-cn/tpAppShare)
  - [微信分享](zh-cn/tpH5Share)
  - [特定时机执行js回调](zh-cn/khtExcuteJSCallback)

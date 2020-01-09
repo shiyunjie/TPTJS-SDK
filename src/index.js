@@ -6,6 +6,7 @@ import khtRequestAppInfo from './khtRequestAppInfo';
 import tpAppShare from './tpAppShare';
 import tpH5Share from './tpH5Share';
 import khtExcuteJSCallback from './khtExcuteJSCallback';
+import tptRequestCachedValueForKey from './tptRequestCachedValueForKey';
 
 export default {
   khtAppRouteRequest,
@@ -16,4 +17,5 @@ export default {
   tpAppShare,
   tpH5Share,
   khtExcuteJSCallback,
+  tptRequestCachedValueForKey,
 };

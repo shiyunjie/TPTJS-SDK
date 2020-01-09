@@ -7,7 +7,7 @@
 
 ```js
 import * as TPTJS from 'tpt-js-sdk'
-TPTJS.tptRequestCachedValueForKey();
+TPTJS.tptRequestCachedValueForKey('khtwebview_xxx');
 
 // 定义一个回调函数 原生会触发tptCachedValue
 window.tptCachedValue = (str) => {

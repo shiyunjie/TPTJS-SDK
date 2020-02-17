@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function khtAppRouteRequest(authorization, detail,
   loginStatus, pageType, tagUrl) {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtAppRouteRequest(
       authorization,
@@ -161,7 +161,7 @@ function khtAppRouteRequest(authorization, detail,
       pageType,
       tagUrl,
     );
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.khtAppRouteRequest.postMessage({
       authorization,
       detail,
@@ -182,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 const uXZ = navigator.userAgent;
 const isAndroidXZ = uXZ.indexOf('Android') > -1 || uXZ.indexOf('Linux') > -1; // android终端或者uc浏览器
 const isiOSXZ = !!uXZ.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+const isKhtAPP = uXZ.indexOf('kehutong') > -1;
 const uaXZ = window.navigator.userAgent.toLowerCase();
 const isWeixin = uaXZ.indexOf('micromessenger') !== -1;
 
@@ -189,6 +190,7 @@ const isWeixin = uaXZ.indexOf('micromessenger') !== -1;
   isAndroidXZ,
   isiOSXZ,
   isWeixin,
+  isKhtAPP,
 });
 
 
@@ -214,10 +216,10 @@ function intentMiniProgram({ userName, path, type }) {
     path,
     type,
   };
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.intentMiniProgram(JSON.stringify(obj));
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.intentMiniProgram.postMessage(obj);
   }
 }
@@ -238,10 +240,11 @@ __webpack_require__.r(__webpack_exports__);
  */
 function khtRequestAppCurrentUser() {
   // eslint-disable-next-line no-undef
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtRequestAppCurrentUser) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtRequestAppCurrentUser && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtRequestAppCurrentUser();
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.khtRequestAppCurrentUser) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.khtRequestAppCurrentUser) {
     window.webkit.messageHandlers.khtRequestAppCurrentUser.postMessage({});
   }
 }
@@ -265,10 +268,10 @@ __webpack_require__.r(__webpack_exports__);
  * @since 1.1.9
  */
 function khtSaveString(key, value) {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtSaveString(key, value);
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.khtSaveString.postMessage({ key, value });
   }
 }
@@ -288,10 +291,10 @@ __webpack_require__.r(__webpack_exports__);
  * 获取用户信息
  */
 function khtRequestAppInfo() {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtRequestAppInfo();
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.khtRequestAppInfo.postMessage({});
   }
 }
@@ -315,11 +318,12 @@ __webpack_require__.r(__webpack_exports__);
  */
 function tpAppShare(shareInfo) {
   // eslint-disable-next-line no-undef
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tpAppShare) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tpAppShare && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.tpAppShare(shareInfo.imgUrl,
       shareInfo.title, shareInfo.content, shareInfo.url);
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.tpAppShare) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.tpAppShare) {
     window.webkit.messageHandlers.tpAppShare.postMessage(shareInfo);
   }
 }
@@ -342,7 +346,7 @@ __webpack_require__.r(__webpack_exports__);
  * @since 1.1.5
  */
 function tpH5Share(shareInfo) {
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.showShareMenu(
       shareInfo.title,
@@ -350,7 +354,7 @@ function tpH5Share(shareInfo) {
       shareInfo.imgUrl,
       shareInfo.url,
     );
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.Share.postMessage(shareInfo);
   }
 }
@@ -375,10 +379,12 @@ __webpack_require__.r(__webpack_exports__);
  */
 function khtExcuteJSCallback(excuteTime, callBack) {
   // eslint-disable-next-line no-undef
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtExcuteJSCallback) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.khtExcuteJSCallback && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtExcuteJSCallback(excuteTime, callBack);
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.khtExcuteJSCallback) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ
+    && window.webkit.messageHandlers.khtExcuteJSCallback
+    && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     window.webkit.messageHandlers.khtExcuteJSCallback.postMessage({ excuteTime, callBack });
   }
 }
@@ -400,10 +406,11 @@ __webpack_require__.r(__webpack_exports__);
  */
 function tptRequestCachedValueForKey(key) {
   // eslint-disable-next-line no-undef
-  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tptRequestCachedValueForKey) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP && kht.tptRequestCachedValueForKey) {
     // eslint-disable-next-line no-undef
     kht.tptRequestCachedValueForKey(key);
-  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
     window.webkit.messageHandlers.tptRequestCachedValueForKey.postMessage({ key });
   }
 }

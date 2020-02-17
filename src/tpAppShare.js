@@ -8,11 +8,12 @@ import config from './config';
  */
 export default function tpAppShare(shareInfo) {
   // eslint-disable-next-line no-undef
-  if (config.isAndroidXZ && kht.tpAppShare) {
+  if (config.isAndroidXZ && kht.tpAppShare && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.tpAppShare(shareInfo.imgUrl,
       shareInfo.title, shareInfo.content, shareInfo.url);
-  } else if (config.isiOSXZ && window.webkit.messageHandlers.tpAppShare) {
+  } else if (config.isiOSXZ && config.isKhtAPP
+    && window.webkit.messageHandlers.tpAppShare) {
     window.webkit.messageHandlers.tpAppShare.postMessage(shareInfo);
   }
 }

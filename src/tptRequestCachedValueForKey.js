@@ -6,10 +6,11 @@ import config from './config';
  */
 export default function tptRequestCachedValueForKey(key) {
   // eslint-disable-next-line no-undef
-  if (config.isAndroidXZ && kht.tptRequestCachedValueForKey) {
+  if (config.isAndroidXZ && config.isKhtAPP && kht.tptRequestCachedValueForKey) {
     // eslint-disable-next-line no-undef
     kht.tptRequestCachedValueForKey(key);
-  } else if (config.isiOSXZ && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
+  } else if (config.isiOSXZ && config.isKhtAPP
+    && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
     window.webkit.messageHandlers.tptRequestCachedValueForKey.postMessage({ key });
   }
 }

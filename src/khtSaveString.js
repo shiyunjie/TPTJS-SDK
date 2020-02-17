@@ -8,10 +8,10 @@ import config from './config';
  * @since 1.1.9
  */
 export default function khtSaveString(key, value) {
-  if (config.isAndroidXZ) {
+  if (config.isAndroidXZ && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtSaveString(key, value);
-  } else if (config.isiOSXZ) {
+  } else if (config.isiOSXZ && config.isKhtAPP) {
     window.webkit.messageHandlers.khtSaveString.postMessage({ key, value });
   }
 }

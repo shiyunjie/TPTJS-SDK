@@ -5,10 +5,11 @@ import config from './config';
  */
 export default function khtRequestAppCurrentUser() {
   // eslint-disable-next-line no-undef
-  if (config.isAndroidXZ && kht.khtRequestAppCurrentUser) {
+  if (config.isAndroidXZ && kht.khtRequestAppCurrentUser && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtRequestAppCurrentUser();
-  } else if (config.isiOSXZ && window.webkit.messageHandlers.khtRequestAppCurrentUser) {
+  } else if (config.isiOSXZ && config.isKhtAPP
+    && window.webkit.messageHandlers.khtRequestAppCurrentUser) {
     window.webkit.messageHandlers.khtRequestAppCurrentUser.postMessage({});
   }
 }

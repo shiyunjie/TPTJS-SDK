@@ -10,7 +10,7 @@ import config from './config';
 
 export default function khtAppRouteRequest(authorization, detail,
   loginStatus, pageType, tagUrl) {
-  if (config.isAndroidXZ) {
+  if (config.isAndroidXZ && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtAppRouteRequest(
       authorization,
@@ -19,7 +19,7 @@ export default function khtAppRouteRequest(authorization, detail,
       pageType,
       tagUrl,
     );
-  } else if (config.isiOSXZ) {
+  } else if (config.isiOSXZ && config.isKhtAPP) {
     window.webkit.messageHandlers.khtAppRouteRequest.postMessage({
       authorization,
       detail,

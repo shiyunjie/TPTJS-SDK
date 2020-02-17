@@ -9,10 +9,12 @@ import config from './config';
  */
 export default function khtExcuteJSCallback(excuteTime, callBack) {
   // eslint-disable-next-line no-undef
-  if (config.isAndroidXZ && kht.khtExcuteJSCallback) {
+  if (config.isAndroidXZ && kht.khtExcuteJSCallback && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.khtExcuteJSCallback(excuteTime, callBack);
-  } else if (config.isiOSXZ && window.webkit.messageHandlers.khtExcuteJSCallback) {
+  } else if (config.isiOSXZ
+    && window.webkit.messageHandlers.khtExcuteJSCallback
+    && config.isKhtAPP) {
     window.webkit.messageHandlers.khtExcuteJSCallback.postMessage({ excuteTime, callBack });
   }
 }

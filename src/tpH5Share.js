@@ -7,7 +7,7 @@ import config from './config';
  * @since 1.1.5
  */
 export default function tpH5Share(shareInfo) {
-  if (config.isAndroidXZ) {
+  if (config.isAndroidXZ && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
     kht.showShareMenu(
       shareInfo.title,
@@ -15,7 +15,7 @@ export default function tpH5Share(shareInfo) {
       shareInfo.imgUrl,
       shareInfo.url,
     );
-  } else if (config.isiOSXZ) {
+  } else if (config.isiOSXZ && config.isKhtAPP) {
     window.webkit.messageHandlers.Share.postMessage(shareInfo);
   }
 }

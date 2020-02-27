@@ -7,6 +7,8 @@ import tpAppShare from './tpAppShare';
 import tpH5Share from './tpH5Share';
 import khtExcuteJSCallback from './khtExcuteJSCallback';
 import tptRequestCachedValueForKey from './tptRequestCachedValueForKey';
+import callBackSignatureInfo from './callBackSignatureInfo';
+import tptAppShowLoading from './tptAppShowLoading';
 
 export default {
   khtAppRouteRequest,
@@ -18,4 +20,6 @@ export default {
   tpH5Share,
   khtExcuteJSCallback,
   tptRequestCachedValueForKey,
+  callBackSignatureInfo,
+  tptAppShowLoading,
 };

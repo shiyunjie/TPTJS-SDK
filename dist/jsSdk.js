@@ -109,6 +109,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tpH5Share__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
 /* harmony import */ var _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 /* harmony import */ var _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+/* harmony import */ var _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
+/* harmony import */ var _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
+
+
 
 
 
@@ -129,6 +133,8 @@ __webpack_require__.r(__webpack_exports__);
   tpH5Share: _tpH5Share__WEBPACK_IMPORTED_MODULE_6__["default"],
   khtExcuteJSCallback: _khtExcuteJSCallback__WEBPACK_IMPORTED_MODULE_7__["default"],
   tptRequestCachedValueForKey: _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__["default"],
+  callBackSignatureInfo: _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__["default"],
+  tptAppShowLoading: _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__["default"],
 });
 
 
@@ -412,6 +418,67 @@ function tptRequestCachedValueForKey(key) {
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
     && window.webkit.messageHandlers.tptRequestCachedValueForKey) {
     window.webkit.messageHandlers.tptRequestCachedValueForKey.postMessage({ key });
+  }
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return callBackSignatureInfo; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * 告诉原生签名回调
+ * @author john.bian
+ * @param signatureData: 签名
+ * @param signatureEncryptedData: 加密后的签名
+ * @since 4.0.4
+ */
+function callBackSignatureInfo({ signatureData, signatureEncryptedData }) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP && kht.callBackSignatureInfo) {
+    // eslint-disable-next-line no-undef
+    kht.callBackSignatureInfo(
+      signatureData,
+      signatureEncryptedData,
+    );
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.callBackSignatureInfo) {
+    window.webkit.messageHandlers
+      .callBackSignatureInfo.postMessage({ signatureData, signatureEncryptedData });
+  }
+}
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tptAppShowLoading; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * h5唤起loading
+ * @author john.bian
+ * @param flag : 0/1
+ * @since 4.0.24
+ */
+function tptAppShowLoading(flag) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP && kht.tptAppShowLoading) {
+    // eslint-disable-next-line no-undef
+    kht.tptAppShowLoading(flag === 1);
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.tptAppShowLoading) {
+    window.webkit.messageHandlers.tptAppShowLoading.postMessage({ flag });
   }
 }
 

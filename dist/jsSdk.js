@@ -111,6 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
 /* harmony import */ var _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
 /* harmony import */ var _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
+/* harmony import */ var _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(13);
+
 
 
 
@@ -135,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
   tptRequestCachedValueForKey: _tptRequestCachedValueForKey__WEBPACK_IMPORTED_MODULE_8__["default"],
   callBackSignatureInfo: _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__["default"],
   tptAppShowLoading: _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__["default"],
+  tptShareForTargetURL: _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__["default"],
 });
 
 
@@ -479,6 +482,41 @@ function tptAppShowLoading(flag) {
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
     && window.webkit.messageHandlers.tptAppShowLoading) {
     window.webkit.messageHandlers.tptAppShowLoading.postMessage({ flag });
+  }
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tptShareForTargetURL; });
+/**
+ * 唤起目标页面分享按钮
+ * @param targetUrl
+ * @param title
+ * @param imgUrl
+ * @param url
+ * @param content
+ * @since 1.2.6
+ */
+function tptShareForTargetURL({
+  targetUrl, title, imgUrl, url, content,
+}) {
+  if (config.isAndroidXZ && config.isKhtAPP && kht.tptShareForTargetURL) {
+    /* eslint no-undef: 0 */
+    kht.tptShareForTargetURL(targetUrl, title, imgUrl, url, content);
+  } else if (config.isiOSXZ && config.isKhtAPP
+    && window.webkit.messageHandlers.tptShareForTargetURL) {
+    window.webkit.messageHandlers.tptShareForTargetURL.postMessage({
+      targetUrl,
+      title,
+      imgUrl,
+      url,
+      content,
+    });
   }
 }
 

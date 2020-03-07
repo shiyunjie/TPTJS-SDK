@@ -17,7 +17,7 @@ const shareInfo = {
 TPTJS.tpH5Share(shareInfo);
 ```
 
-## khtSaveString 参数
+## tpAppShare 参数
 
 | 参数   | 说明   | 类型    | 可选值 | 默认值   |
 | ---   | ---- | ------- | ------- | ------ |

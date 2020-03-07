@@ -1,26 +1,28 @@
-# tpAppShare
+# tptShareForTargetURL
 
 ---
 
-网页 调用微信分享 用于导航栏
+网页 调用微信分享 目标页面 用于导航栏 
 
 ## 使用指南
 
 ```js
 import * as TPTJS from 'tpt-js-sdk'
 const shareInfo = {
+  targetUrl: '',
   title: '',
   imgUrl: '',
   url: '',
   content: ''
 }
-TPTJS.tpAppShare(shareInfo);
+TPTJS.tptShareForTargetURL(shareInfo);
 ```
 
-## tpAppShare 参数
+## tptShareForTargetURL 参数
 
 | 参数   | 说明   | 类型    | 可选值 | 默认值   |
 | ---   | ---- | ------- | ------- | ------ |
+| targetUrl  | 目标页面url | string | - | - |
 | title  | 文章标题 | string | - | - |
 | imgUrl | 缩略图 | String | - | - |
 | url  | 文章地址 | string | - | - |

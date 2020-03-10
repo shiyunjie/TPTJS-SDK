@@ -493,6 +493,9 @@ function tptAppShowLoading(flag) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tptShareForTargetURL; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
 /**
  * 唤起目标页面分享按钮
  * @param targetUrl
@@ -505,10 +508,10 @@ __webpack_require__.r(__webpack_exports__);
 function tptShareForTargetURL({
   targetUrl, title, imgUrl, url, content,
 }) {
-  if (config.isAndroidXZ && config.isKhtAPP && kht.tptShareForTargetURL) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP && kht.tptShareForTargetURL) {
     /* eslint no-undef: 0 */
     kht.tptShareForTargetURL(targetUrl, title, imgUrl, url, content);
-  } else if (config.isiOSXZ && config.isKhtAPP
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
     && window.webkit.messageHandlers.tptShareForTargetURL) {
     window.webkit.messageHandlers.tptShareForTargetURL.postMessage({
       targetUrl,

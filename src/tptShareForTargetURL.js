@@ -1,3 +1,5 @@
+import config from './config';
+
 /**
  * 唤起目标页面分享按钮
  * @param targetUrl

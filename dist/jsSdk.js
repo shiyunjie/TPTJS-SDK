@@ -540,7 +540,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * 唤起原生OCR
  * @author john.bian
- * @param ocrInfo -> width, height, isForeground, compressImageQuality, includeBase64,
+ * @param ocrInfo -> width, height, isForeground, type,compressImageQuality, includeBase64, callBack
  * @since 1.2.9
  */
 function tpAppOcr(ocrInfo) {

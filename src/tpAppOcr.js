@@ -10,7 +10,13 @@ export default function tpAppOcr(ocrInfo) {
   // eslint-disable-next-line no-undef
   if (config.isAndroidXZ && kht.tpAppOcr && config.isKhtAPP) {
     // eslint-disable-next-line no-undef
-    kht.tpAppOcr(ocrInfo);
+    kht.tpAppOcr(ocrInfo.width,
+      ocrInfo.height,
+      ocrInfo.type,
+      ocrInfo.isForeground,
+      ocrInfo.compressImageQuality,
+      ocrInfo.includeBase64,
+      ocrInfo.callBack);
   } else if (config.isiOSXZ && config.isKhtAPP
     && window.webkit.messageHandlers.tpAppOcr) {
     window.webkit.messageHandlers.tpAppOcr.postMessage(ocrInfo);

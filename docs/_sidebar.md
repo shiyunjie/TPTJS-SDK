@@ -13,3 +13,4 @@
  - [特定时机执行js回调](zh-cn/khtExcuteJSCallback)
  - [显示隐藏loading](zh-cn/tptAppShowLoading)
  - [签名回调](zh-cn/callBackSignatureInfo)
+ - [保存图片](zh-cn/tptAppShowMenuDialog)

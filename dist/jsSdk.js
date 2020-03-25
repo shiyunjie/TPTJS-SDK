@@ -112,6 +112,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
 /* harmony import */ var _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
 /* harmony import */ var _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(13);
+/* harmony import */ var _tptAppShowMenuDialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(14);
+
 
 
 
@@ -138,6 +140,7 @@ __webpack_require__.r(__webpack_exports__);
   callBackSignatureInfo: _callBackSignatureInfo__WEBPACK_IMPORTED_MODULE_9__["default"],
   tptAppShowLoading: _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__["default"],
   tptShareForTargetURL: _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__["default"],
+  tptAppShowMenuDialog: _tptAppShowMenuDialog__WEBPACK_IMPORTED_MODULE_12__["default"],
 });
 
 
@@ -520,6 +523,34 @@ function tptShareForTargetURL({
       url,
       content,
     });
+  }
+}
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tptAppShowMenuDialog; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * h5保存图片到相册
+ * @author john.bian
+ * @param imgBase64 : base64图片
+ * @since 1.3.0
+ */
+function tptAppShowMenuDialog(imgBase64) {
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tptAppShowMenuDialog) {
+    // eslint-disable-next-line no-undef
+    kht.tptAppShowMenuDialog(imgBase64);
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.tptAppShowMenuDialog) {
+    window.webkit.messageHandlers.tptAppShowMenuDialog.postMessage({ image: imgBase64 });
   }
 }
 

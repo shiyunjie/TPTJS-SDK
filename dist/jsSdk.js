@@ -113,6 +113,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
 /* harmony import */ var _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(13);
 /* harmony import */ var _tpAppOcr__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(14);
+/* harmony import */ var _tpSafeKeyboard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(15);
+
 
 
 
@@ -141,6 +143,7 @@ __webpack_require__.r(__webpack_exports__);
   tptAppShowLoading: _tptAppShowLoading__WEBPACK_IMPORTED_MODULE_10__["default"],
   tptShareForTargetURL: _tptShareForTargetURL__WEBPACK_IMPORTED_MODULE_11__["default"],
   tpAppOcr: _tpAppOcr__WEBPACK_IMPORTED_MODULE_12__["default"],
+  tpAppSafeKeyboard: _tpSafeKeyboard__WEBPACK_IMPORTED_MODULE_13__["default"],
 });
 
 
@@ -547,10 +550,48 @@ function tpAppOcr(ocrInfo) {
   // eslint-disable-next-line no-undef
   if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tpAppOcr && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
     // eslint-disable-next-line no-undef
-    kht.tpAppOcr(ocrInfo);
+    kht.tpAppOcr(ocrInfo.width,
+      ocrInfo.height,
+      ocrInfo.type,
+      ocrInfo.isForeground,
+      ocrInfo.compressImageQuality,
+      ocrInfo.includeBase64,
+      ocrInfo.callBack);
   } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
     && window.webkit.messageHandlers.tpAppOcr) {
     window.webkit.messageHandlers.tpAppOcr.postMessage(ocrInfo);
+  }
+}
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tpAppSafeKeyboard; });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+/**
+ * 唤起原生密码键盘
+ * @author shiyunjie
+ * @param keyboardInfo -> callBackMethod
+ * @since 1.3.0
+ */
+function tpAppSafeKeyboard(keyboardInfo) {
+  const keyboardParam = {
+    messageName: 'verifyPaymentPassword',
+    callBackMethod: keyboardInfo.callBackMethod,
+  };
+  // eslint-disable-next-line no-undef
+  if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isAndroidXZ && kht.tptSendMessageToTPApp && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP) {
+    // eslint-disable-next-line no-undef
+    kht.tptSendMessageToTPApp(JSON.stringify(keyboardParam));
+  } else if (_config__WEBPACK_IMPORTED_MODULE_0__["default"].isiOSXZ && _config__WEBPACK_IMPORTED_MODULE_0__["default"].isKhtAPP
+    && window.webkit.messageHandlers.tptSendMessageToTPApp) {
+    window.webkit.messageHandlers.tptSendMessageToTPApp.postMessage(keyboardParam);
   }
 }
 

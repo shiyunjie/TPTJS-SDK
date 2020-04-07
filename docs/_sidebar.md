@@ -14,3 +14,4 @@
  - [显示隐藏loading](zh-cn/tptAppShowLoading)
  - [签名回调](zh-cn/callBackSignatureInfo)
  - [OCR识别](zh-cn/tpAppOcr)
+ - [唤起密码键盘](zh-cn/tpSafeKeyboard)

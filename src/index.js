@@ -10,6 +10,8 @@ import tptRequestCachedValueForKey from './tptRequestCachedValueForKey';
 import callBackSignatureInfo from './callBackSignatureInfo';
 import tptAppShowLoading from './tptAppShowLoading';
 import tptShareForTargetURL from './tptShareForTargetURL';
+import tpAppOcr from './tpAppOcr';
+import tpAppSafeKeyboard from './tpSafeKeyboard';
 
 export default {
   khtAppRouteRequest,
@@ -24,4 +26,6 @@ export default {
   callBackSignatureInfo,
   tptAppShowLoading,
   tptShareForTargetURL,
+  tpAppOcr,
+  tpAppSafeKeyboard,
 };

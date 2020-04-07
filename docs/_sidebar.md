@@ -13,3 +13,5 @@
  - [特定时机执行js回调](zh-cn/khtExcuteJSCallback)
  - [显示隐藏loading](zh-cn/tptAppShowLoading)
  - [签名回调](zh-cn/callBackSignatureInfo)
+ - [OCR识别](zh-cn/tpAppOcr)
+ - [唤起密码键盘](zh-cn/tpSafeKeyboard)

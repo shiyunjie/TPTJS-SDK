@@ -10,10 +10,10 @@
   "keywords": [],
   "author": "johnbian",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/johnbian/TPTJS-SDK.git"
-	},
-	"homepage": "https://johnbian.github.io/TPTJS-SDK/",
+    "type": "git",
+    "url": "https://github.com/johnbian/TPTJS-SDK.git"
+  },
+  "homepage": "https://johnbian.github.io/TPTJS-SDK/",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.0.3",
